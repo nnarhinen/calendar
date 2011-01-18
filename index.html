@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>Calendar</title>
+	<link rel="stylesheet" href="lib/jquery/cupertino/jquery-ui-1.8.6.custom.css" />
+	<link rel="stylesheet" href="lib/calendar.css" type="text/css" />
+	<script type="text/javascript" src="lib/jquery/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="lib/jquery/jquery-ui-1.8.6.custom.min.js"></script>
+	<script type="text/javascript" src="lib/calendar.js"></script>
+	<script type="text/javascript">
+	$(function() {
+		var i = 0;
+		var eventColors = ['#f00', 'blue', 'green', 'yellow', 'lime'];
+		var calendar = $('#calendar').calendar({
+			eventdoubleclick: function(event, data) {
+				
+			}
+		});
+		$('#addevent').button().click(function() {
+			i++;
+			calendar.calendar('addevent', {
+				day: 2,
+				startHour: 9,
+				length: 3,
+				title: 'Eventti ' + i,
+				color: eventColors[i-1]
+			});
+			return false;
+		});
+	});
+	</script>
+</head>
+
+<body>
+	<button id="addevent">Lisää eventti</button>
+	<div id="calendar" style="height: 500px;" />
+</body>
+</html>

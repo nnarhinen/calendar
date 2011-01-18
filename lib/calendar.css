@@ -1,0 +1,39 @@
+table.calendar,table.innercalendar {
+	border-collapse: collapse;
+	width: 100%;
+}
+table.calendar {
+	height: 100%;
+}
+
+/*table.calendar th {
+	background-color: #33ccff;
+}*/
+table.calendar td {
+	border-right: 1px solid #ccc;
+	padding: 0px;
+}
+table.calendar thead {
+	z-index: 1000;
+}
+table.innercalendar tbody tr {
+	border-bottom: 1px solid #ccc;
+}
+.calendar-event-title {
+	width: 100%;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+	cursor: move;
+	position: relative;
+	top: 0px;
+	left: 0px;
+}
+.calendar-event {
+	-moz-box-shadow: 2px 2px 1px #ccc;
+	-webkit-box-shadow: 2px 2px 1px #ccc;
+	box-shadow: 2px 2px 1px #ccc;
+}
+.calendar-event-resizehandle {
+	position: absolute;
+	bottom: 0px;
+}
